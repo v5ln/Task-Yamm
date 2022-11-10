@@ -7,11 +7,17 @@ class Users {
     UserModel(username: "omar", password: "xx123"),
   ];
 
-  void addUser(UserModel user) {
-    UsersList.add(user);
+  static bool verifyUser(UserModel user) {
+    return UsersList.any(((element) =>
+        element.password == user.password &&
+        element.username == user.username));
   }
 
-  static bool verifyUser(UserModel user) {
-    return UsersList.any(((element) => element.password== user.password && element.username == user.username));
+  static bool add(UserModel user) {
+    if (!UsersList.any(((element) => element.username == user.username))) {
+      UsersList.add(user);
+      return true;
+    }
+    return false;
   }
 }

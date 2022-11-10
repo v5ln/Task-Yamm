@@ -10,38 +10,41 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(
-        top: 60,
-        left: 20,
-        right: 20,
-        bottom: 80,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              const Icon(
-                Icons.playlist_add_check,
-                size: 40,
-                color: Colors.white,
-              ),
-              const SizedBox(width: 20),
-              const Text(
-                'Yamm ToDo',
-                style: TextStyle(
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 190, 109, 205),
+      body: Container(
+        padding: const EdgeInsets.only(
+          top: 60,
+          left: 20,
+          right: 20,
+          bottom: 80,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                const Icon(
+                  Icons.playlist_add_check,
+                  size: 40,
                   color: Colors.white,
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
                 ),
-              ),
-            ],
-          ),
-          Items(),
-          add_item(),
-        ],
+                const SizedBox(width: 20),
+                const Text(
+                  'Yamm ToDo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            Items(),
+            add_item(),
+          ],
+        ),
       ),
     );
   }

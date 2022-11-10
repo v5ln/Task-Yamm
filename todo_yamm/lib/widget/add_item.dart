@@ -15,7 +15,7 @@ class _add_itemState extends State<add_item> {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 255, 197, 6),
       onPressed: () => add(),
       child: Icon(
         Icons.add,

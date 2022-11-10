@@ -79,9 +79,9 @@ class _ItemsState extends State<Items> {
                                   Data.ItemsData[index].name),
                             ),
                             Checkbox(
-                              checkColor: Colors.white,
+                              checkColor: Color.fromARGB(255, 151, 11, 176),
                               // fillColor: MaterialStateProperty.resolveWith(getColor),
-                              activeColor: Colors.black,
+                              activeColor: Color.fromARGB(255, 255, 197, 6),
                               value: Data.ItemsData[index].checked,
                               onChanged: (bool? value) {
                                 Data.updateTask(Data.ItemsData[index]);

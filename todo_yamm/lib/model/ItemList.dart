@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'ItemModel.dart';
 
-class ItemList  extends ChangeNotifier {
+class ItemList extends ChangeNotifier {
   List<ItemModel> ItemsData = [
-    ItemModel(name: 'Study Big Data',checked: false),
-    ItemModel(name: 'Make the canva',checked: false),
-    ItemModel(name: 'HW3',checked: false),
+    ItemModel(name: 'Study Big Data', checked: false),
+    ItemModel(name: 'Make the canva', checked: true),
+    ItemModel(name: 'HW3', checked: false),
   ];
 
   void addTask(String newTaskTitle) {

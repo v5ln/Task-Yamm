@@ -21,7 +21,7 @@ class _MyStatefulWidgetState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 190, 109, 205),
+      backgroundColor: Color.fromRGBO(190, 109, 205, 1),
       body: Padding(
           padding: const EdgeInsets.all(10),
           child: ListView(

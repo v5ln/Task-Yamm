@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../model/ItemList.dart';
 
 class add_item extends StatefulWidget {
@@ -24,36 +23,36 @@ class _add_itemState extends State<add_item> {
       ),
     );
   }
+    add() => showModalBottomSheet(
+        isScrollControlled: true,
+        isDismissible: true,
+        context: context,
+        builder: (context) => SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom),
+                child: Container(
+                    padding: EdgeInsets.all(30),
+                    // color: Color.fromARGB(0, 255, 255, 255),
+                    child: Column(
+                      children: [
+                        Text("Add New Item", style: TextStyle(fontSize: 20)),
+                        TextField(
+                          autofocus: true,
+                          onChanged: (newText) {
+                            newTaskTitle = newText;
+                          },
+                        ),
+                        TextButton(
+                            onPressed: () => {
+                                  Provider.of<ItemList>(context, listen: false)
+                                      .addTask(newTaskTitle),
+                                  Navigator.of(context).pop(),
+                                },
+                            child: Text("Save"))
+                      ],
+                    )),
+              ),
+            ));
+  }
 
-  add() => showModalBottomSheet(
-      isScrollControlled: true,
-      isDismissible: true,
-      context: context,
-      builder: (context) => SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).viewInsets.bottom),
-              child: Container(
-                  padding: EdgeInsets.all(30),
-                  // color: Color.fromARGB(0, 255, 255, 255),
-                  child: Column(
-                    children: [
-                      Text("Add New Item", style: TextStyle(fontSize: 20)),
-                      TextField(
-                        autofocus: true,
-                        onChanged: (newText) {
-                          newTaskTitle = newText;
-                        },
-                      ),
-                      TextButton(
-                          onPressed: () => {
-                                Provider.of<ItemList>(context, listen: false)
-                                    .addTask(newTaskTitle),
-                                Navigator.of(context).pop(),
-                              },
-                          child: Text("Save"))
-                    ],
-                  )),
-            ),
-          ));
-}

@@ -30,7 +30,7 @@ class _ItemsState extends State<Items> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600,
+      height: 500,
       child: Consumer<ItemList>(
         builder: (context, Data, child) {
           return ListView.builder(
@@ -51,11 +51,9 @@ class _ItemsState extends State<Items> {
                     }),
                     child: Container(
                         padding: const EdgeInsets.only(
-                          top: 15,
-                          bottom: 15,
-                        ),
+                            top: 15, bottom: 15, left: 35, right: 20),
                         margin: EdgeInsets.only(bottom: 20),
-                        height: 100,
+                        height: 80,
                         decoration: const BoxDecoration(
                             color: Color.fromARGB(231, 255, 255, 255),
                             boxShadow: [
@@ -70,14 +68,11 @@ class _ItemsState extends State<Items> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(left: 35),
-                              child: Text(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  Data.ItemsData[index].name),
-                            ),
+                            Text(
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                                Data.ItemsData[index].name),
                             Checkbox(
                               checkColor: Color.fromARGB(255, 151, 11, 176),
                               // fillColor: MaterialStateProperty.resolveWith(getColor),

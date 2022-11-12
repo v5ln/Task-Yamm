@@ -4,7 +4,7 @@ import 'UserModel.dart';
 
 class Users {
   static List<UserModel> UsersList = [
-    UserModel(username: "omar", password: "xx123"),
+    UserModel(username: "1", password: "1"),
   ];
 
   static bool verifyUser(UserModel user) {
